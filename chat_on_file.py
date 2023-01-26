@@ -1,7 +1,7 @@
 import openai
 openai.api_key="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"
 while True:
-    quetion = input('bot : ')
+    quetion = input('hamzoooz :\\> ')
     answer = openai.Completion.create(
         model = "text-davinci-003",
         prompt = quetion,
@@ -16,5 +16,12 @@ while True:
     else:
         text = answer['choices'][0]['text']
         print('...' + text)
-        print("="*50)    
+        print("#"*50)    
+# write out put on file
+    def main():
+        f = open(quetion + "." + "py", "+w")
+        f.write(answer['choices'][0]['text'])
+        f.close
+    if __name__ == "__main__":
+        main()
 
